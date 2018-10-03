@@ -1,4 +1,5 @@
 dude [] determined;
+//jechen27 source code to make a swithc to change pacmans behavior
 void setup() {
   size(1000,1000);
   background(0);
