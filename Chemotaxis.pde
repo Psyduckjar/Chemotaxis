@@ -99,6 +99,5 @@ void mousePressed() {
   damn = damn + 1;
   if(damn == 2) {
     damn = -1;
-    print(damn);
   }
 }
