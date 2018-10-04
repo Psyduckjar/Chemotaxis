@@ -1,10 +1,13 @@
 dude [] determined;
 //jechen27 source code to make a swithc to change pacmans behavior
+PImage ghost, cherry;
 int damn = 1;
 void setup() {
   size(1000,1000);
   background(0);
   frameRate(60);
+  ghost = loadImage("ghost.png");
+  cherry = loadImage("cherry.png");
   determined = new dude[20];
   for(int i = 0; i < determined.length; i++) {
     determined[i] = new dude();
@@ -14,6 +17,13 @@ void setup() {
 
 void draw() {
   background(0);
+   if (damn == 1)
+   {
+     image(cherry,mouseX-14,mouseY-15);
+   }
+   if (damn != 1) {
+     image(ghost,mouseX-21,mouseY-21);
+   }
   for(int i = 0; i < determined.length; i++) {
     determined[i].plugWalk();
     determined[i].show();  
@@ -89,5 +99,6 @@ void mousePressed() {
   damn = damn + 1;
   if(damn == 2) {
     damn = -1;
+    print(damn);
   }
 }
