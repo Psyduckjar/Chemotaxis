@@ -1,9 +1,10 @@
 dude [] determined;
 //jechen27 source code to make a swithc to change pacmans behavior
+int damn = 1;
 void setup() {
   size(1000,1000);
   background(0);
-  frameRate(15);
+  frameRate(60);
   determined = new dude[20];
   for(int i = 0; i < determined.length; i++) {
     determined[i] = new dude();
@@ -17,6 +18,10 @@ void draw() {
     determined[i].plugWalk();
     determined[i].show();  
   } 
+  if(damn == 1)
+  text("its on",200,200,100);
+  else
+   text("its off",200,200,100);
 }
 
 
@@ -47,16 +52,24 @@ class dude {
    if(plug == 3) {
      myY = myY - 20;
    }
-   if(mouseX > 500 && mouseY > 500) {
-     
-   }
-   if(mouseX < 500 && mouseY > 500) {
-   }
-   if(mouseX > 500 && mouseY < 500) {
-   }
-   if(mouseX < 500 && mouseY < 500) {
-   }
+  if (mouseX > myX) {
+    myX = myX + damn;
   }
+  if (mouseX < myX) {
+    myX = myX - damn;
+  }
+  if (mouseY > myY) {
+    myY = myY + damn;
+  }
+  if (mouseX < myY) {
+    myY = myY - damn;
+  }
+  if(damn == -1 && (get(mouseX,mouseY) != color(0,0,0))) {
+    background(0,0,0);
+  }
+  }
+  
+    
   void bruh() {
     fill(theColor);
     int rand = (((int)(Math.random()*1000)));
@@ -69,4 +82,12 @@ class dude {
   //  System.out.println(myX+","+ myY);
     bruh();
     }
+}
+
+
+void mousePressed() {
+  damn = damn + 1;
+  if(damn == 2) {
+    damn = -1;
+  }
 }
