@@ -88,7 +88,7 @@ class dude {
   }
   void show() {
     fill(theColor);// create  a condition that bounces the balls back when it touches the border
-    arc(myX, myY, 80, 80, -1, PI+QUARTER_PI, PIE); // add text in the arcs to say "bruh"
+    ellipse(myX, myY, 80, 80); // add text in the arcs to say "bruh"
   //  System.out.println(myX+","+ myY);
     bruh();
     }
